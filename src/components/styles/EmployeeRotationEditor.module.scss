@@ -1,0 +1,132 @@
+.employeeRotationEditor{
+    margin:0;
+
+    .headerSection{
+        margin: 20px -8px 0px -8px;
+    }
+
+    .employeeRotationEditorSection label{
+        font-weight:500;
+        margin-top:10px;
+    }
+
+    .employeeRotationPanelHeader{
+        font-weight:400;
+        margin-bottom:10px;
+    }
+    .employeeRotationHeading{
+        color:#4254ac;
+        font-weight:700;
+    }
+    
+    .employeeRotationHeadingRow{
+        border-color:#d2d9fe;
+        margin:4px 0 0 -1px;
+    }
+    .employeeRotationGraduateHeadingRow{
+        border-color:#d2d9fe;
+        margin:4px 0px 10px -1px;
+    }
+    .employeeRotationHeadingRowDiv{
+        margin-top:7px;
+    }
+    
+    .employeeName {
+        font-size: 20px;
+        font-weight: 600;   
+    }
+    .label{
+        font-weight:500;
+        margin-top:15px;
+        margin-bottom: 10px;
+    }
+    .text
+    {
+        overflow:hidden
+    }
+    .noValues{
+        margin-bottom: 20px;
+    }
+
+    .rotationbutton:focus{
+        margin-right: 5px;
+        border-width: medium;
+        border-color: #000000;
+    }
+    .rotationbutton{
+        margin-right: 5px;
+        border-width: thin;
+        border-color: #000000;
+    }
+    .onFocus:focus{
+        border:solid 2px #000000;
+    }
+    .onNumber:focus{
+        border:solid 2px #000000;
+    }
+    .onNumber::-webkit-inner-spin-button {
+        display: none;
+    }
+    .onNumber::-webkit-outside-spin-button {
+        display: none;
+    }
+
+    .onFocusDropdown:focus{
+        border:solid 1px #000000;
+    }
+    //these are not applying, need to remove
+    // .datePickerCustomBorder{
+    //     border:solid 1px #000000;
+    // }
+    // .datePickerCustomBorder:focus{
+    //     border:solid 2px #000000;
+    // }
+    //these are not applying, need to remove
+
+    .organizationContainer{
+        label{
+            margin-bottom: 20px;
+        }
+    }
+
+    .positionContainer{
+        label{
+            margin-bottom: 2px;
+        }
+    }
+    // //For People Picker
+    // :global .validation-error > div.text {
+        
+    //         border: 3px solid #FF0000 !important;
+        
+    // }
+    // //For dropdown
+    // :global .validation-error > div.dropdown {
+        
+    //     border: 3px solid #FF0000 !important;    
+    // }
+    :global .validation-error{
+       // background-color:greenyellow;
+       // border: 1px solid #000000 !important;
+    //    :global .onFocusDropdown{
+    //     border: 1px solid #FF0000 !important;
+    //    }
+    //    dropdown{
+    //     border: 1px solid #FF0000 !important;
+    //    }
+       input{
+        border: 1px solid #FF0000 !important;
+       }
+       :global .ms-Dropdown-container div{
+
+        border: 1px solid #FF0000 !important;
+       }       
+       :global .ms-BasePicker-text {
+        border: 0px;
+        }
+        :global .ms-Dropdown-title {
+            border: 0px;
+        }
+    }
+
+}

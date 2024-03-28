@@ -1,0 +1,112 @@
+import * as React from 'react';
+import { configure, mount, ReactWrapper, shallow, ShallowWrapper } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import _ from 'lodash';
+import { PivotItem, Pivot, PrimaryButton } from '@fluentui/react';
+import { EmployeeRotationEditor, IEmployeeProps, IEmployeeState } from 'components/EmployeeRotationEditor';
+//import { FocusAreaAssignmentEditor, IProps, IOwnState } from 'components/FocusAreaAssignmentEditor';
+import { employeeRotationServicesMock, configurationServicesMock } from './MockData/MockData_Instances';
+import { EmployeeRotation, FocusArea, FocusAreaAssignment, FocusAreaStatus, Store } from '../../../model';
+import { getEmployeeRotation } from './MockData/EmployeeRotationMockData';
+import { getFocusArea } from './MockData/FocusAreaMockData';
+import { getStores } from './MockData/StoreMockData';
+import moment from 'moment-timezone';
+
+
+configure({ adapter: new Adapter() });
+
+describe('Test case when editing the employee rotation', () => {
+
+    let reactEmployeeRotationEditorComponent: ReactWrapper<IEmployeeProps, IEmployeeState>;
+
+    let employeeRotation: EmployeeRotation = getEmployeeRotation()[0];
+    let focusAreaAssignments = employeeRotation.employeeAssignment.get();
+    let focusAreaArr: FocusArea[] = getFocusArea();
+    let allStores: Store[] = getStores();
+    let mockServiceProp: any = { employeeRotationServicesMock, configurationServicesMock };
+
+    beforeEach(() => {
+        reactEmployeeRotationEditorComponent = mount(
+            React.createElement(
+                EmployeeRotationEditor,
+                {
+                    onSelectedFocusArea: jest.fn(),
+                    onClose: jest.fn(),
+                    services: mockServiceProp,// {employeeRotationServicesMock,configurationServicesMock},
+                    componentRef: ref => ref.edit(employeeRotation),
+                    allEmployees: getEmployeeRotation()
+                }
+            ));
+    });
+
+    afterEach(() => {
+        reactEmployeeRotationEditorComponent.unmount();
+
+    });
+
+    it('Should render Employee Rotation Editor Panel', () => {
+        let parentDiv = reactEmployeeRotationEditorComponent.find('.customEmployeePanel');
+        let parentDivLen = parentDiv.length;
+        expect(parentDivLen).toBe(1);
+    });
+
+
+    it('Should render employee details in readonly format if employee rotation edit form is opened', () => {
+        let employeeReadOnlyDetailsDiv = reactEmployeeRotationEditorComponent.find('.employeeReadOnlyDetails');
+        let employeeReadOnlyDetailsDivLen = employeeReadOnlyDetailsDiv.length;
+        expect(employeeReadOnlyDetailsDivLen).toBe(1);
+    });
+
+    it('Should render completed focus Area details section', () => {
+        const completedAssignment = focusAreaAssignments && focusAreaAssignments.filter(assign => assign.endDate && assign.endDate.isBefore(moment()));
+
+        let focusAreaCompletedDiv = reactEmployeeRotationEditorComponent.find('.focusAreaCompleted');
+        let focusAreaCompletedTilesLength = focusAreaCompletedDiv.findWhere(el => el.hasClass("focusAreaTile")).length
+
+        expect(focusAreaCompletedDiv.length).toBe(1);
+        expect(focusAreaCompletedTilesLength).toBe(completedAssignment.length);
+    });
+
+    it('Should render current focus Area details section', () => {
+        const currentAssignment = focusAreaAssignments && focusAreaAssignments.filter(assign => assign.startDate && assign.endDate && (assign.startDate.isSameOrBefore(moment()) && assign.endDate.isSameOrAfter(moment())));
+
+        let focusAreaCurrentDiv = reactEmployeeRotationEditorComponent.find('.focusAreaCurrent');
+        let focusAreaCurrentTilesLength = focusAreaCurrentDiv.findWhere(el => el.hasClass("focusAreaTile")).length
+
+        expect(focusAreaCurrentDiv.length).toBe(1);
+        expect(focusAreaCurrentTilesLength).toBe(currentAssignment.length);
+    });
+
+    it('Should render next focus Area details section', () => {
+        const nextAssignment = focusAreaAssignments && focusAreaAssignments.filter(assign => assign.startDate && assign.startDate.isAfter(moment()));
+
+        let focusAreaNextdDiv = reactEmployeeRotationEditorComponent.find('.focusAreaNext');
+        let focusAreaNextTilesLength = focusAreaNextdDiv.findWhere(el => el.hasClass("focusAreaTile")).length
+
+        expect(focusAreaNextdDiv.length).toBe(1);
+        expect(focusAreaNextTilesLength).toBe(nextAssignment.length);
+    });
+
+
+
+    // it('Employee Rotation should validate the start date and end date', () => {
+    //     let FocusAssignmentMockData: FocusAreaAssignment = employeeRotation.employeeAssignment.get()[0];
+    //     FocusAssignmentMockData.startDate = moment(new Date());
+    //     FocusAssignmentMockData.endDate = moment(new Date()).subtract(2, "weeks");
+    //     //reactFocusAreaEditorComponent.setProps({ assignment: FocusAssignmentMockData, isValidationApplied: true, manageFocus: true });
+    //     //reactFocusAreaEditorComponent.instance().forceUpdate();
+
+
+    //     let startDateErrorDiv = reactEmployeeRotationEditorComponent.find('#FocusStartDateErrorId');
+    //     let endDateErrorDiv = reactEmployeeRotationEditorComponent.find('#FocusEndDateErrorId');
+    //     expect(startDateErrorDiv.length).toBe(1);
+    //     expect(endDateErrorDiv.length).toBe(1);
+    // });
+
+
+    // it('Should show approver dropdown only to admin user', () => {
+    //     let parentDiv = reactEmployeeRotationEditorComponent.find('.focusAreaAssignmentEditor');
+    //     let parentDivLen = parentDiv.length;
+    //     expect(parentDivLen).toBe(1);
+    // });
+});

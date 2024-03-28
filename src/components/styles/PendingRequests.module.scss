@@ -1,0 +1,98 @@
+@import 'common.module';
+
+.PendingRequests{
+    margin: 0;
+
+    .detailListContainer{
+        margin: 0px;
+
+        .detailsList{
+            cursor:  pointer;
+        }
+    }
+
+    .detailsListCol{
+        padding: 10px 0;
+    }
+    
+    .noItemText{
+        margin: 20px 0;
+        color: '[theme: neutralPrimary , default: #323130 ]';
+    }
+    .detailGridView{
+        margin: 10px 0px 0px 0px ;
+        padding: 0px;
+        color: '[theme: neutralPrimary , default: #323130 ]';
+    }
+    
+    .filterRow{
+        margin-top:10px;
+
+        .searchCointainer{
+            margin-top: 30px;
+        }
+
+        .orderByCointainer{
+            //margin-top: 35px;
+            width:180px;
+
+            .viewIconLabel{
+                float: left;
+            }
+
+            button{
+                border: none;
+                background-color: #fff;
+                margin-top: -6px;
+            }
+        }
+
+        .filterFocusArea{
+            width: 30%;
+            display: inline-block;
+        }
+        .filterFocusArea label{
+            font-weight: 700;
+        }
+
+        .filterHub{
+            width: 30%;
+            display: inline-block;
+            padding-left: 15px;
+        }
+        .filterHub  label{
+            font-weight: 700;
+        }
+
+        .viewIcon{
+            font-size: 14px;
+            margin: 0px 4px;
+            height: 14px;
+            line-height: 14px;
+            text-align: center;
+        }
+    }    
+
+    .currentfocusareaLink{
+        font-weight: 700;
+        text-decoration: underline;
+        margin: 0 0 5px 0;
+    }
+    .label{
+        font-weight: bold;
+        margin: 5px 0;
+        color: '[theme: neutralPrimary , default: #323130 ]';
+    }
+    .searchBox{
+        margin-top: 30px;
+    }
+    .filterSearchBox{
+        margin-top: 28px;
+    }
+    .onFocus:focus-within{
+        border:solid 2px black;
+    }  
+    .onFocusDropdown:focus-within{
+        border:solid 1px black;
+    }  
+}

@@ -1,0 +1,58 @@
+@import 'common.module';
+
+.formerAssociates{
+    margin: 0;
+
+    .detailListContainer{
+        margin: 0px;
+
+        .detailsListRow{
+            cursor:  pointer;
+        }
+
+    }
+    .detailsListCol{
+        padding: 10px 0;
+    }
+    .noItemText{
+        margin: 20px 0;
+        color: '[theme: neutralPrimary , default: #323130 ]';
+    }
+    .detailGridView{
+        margin: 10px 0px 0px 0px;
+        padding: 0px;
+    }
+    
+    .filterRow{
+        margin-top:10px;
+
+        .searchCointainer{
+            margin-top: 30px;
+        }
+        
+        .filterFocusArea{
+            width: 30%;
+            display: inline-block;
+        }
+        .filterFocusArea label{
+            font-weight: 700;
+        }
+
+        .filterHub{
+            width: 30%;
+            display: inline-block;
+            padding-left: 15px;
+        }
+        .filterHub  label{
+            font-weight: 700;
+        }
+        .onFocus:focus-within{
+            border:solid 2px black;
+        }
+        .onFocusDrodown:focus-within{
+            border:solid 1px black;
+        }
+    }  
+
+
+}

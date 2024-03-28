@@ -1,0 +1,20 @@
+@import 'common.module';
+
+.asyncLoadComponent {
+    position: relative;
+    overflow: hidden;
+
+    &.spinnersEnabled {
+        min-height: $spinner-size + $spinner-padding * 2;
+    }
+
+    .errorMessage {
+        background-color: lightpink;
+        padding: 10px;
+    }
+
+    .detailsLink {
+        margin:0;
+       // color: $ms-color-sharedCyanBlue10;
+    }
+}

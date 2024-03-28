@@ -1,0 +1,30 @@
+@import 'common.module';
+
+.panel {
+    .close {
+        font-size: 16px;
+    }
+
+    .errorMessage{
+        margin: 0;
+    }
+
+    .navigation {
+        display: flex;
+        float: right;
+        height: 44px;
+        width: 44px;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            color: $ms-color-neutralSecondary;
+            cursor: pointer;
+        }
+    }
+
+    :global(.ms-Dialog-actions) {
+        margin-bottom: 40px;
+    }
+}

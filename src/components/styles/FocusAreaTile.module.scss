@@ -1,0 +1,66 @@
+.focusAreaTile{
+    margin:10px 0 10px 0;
+    background-color:#f6f6f6;
+    display:flex;
+    .grids{
+        width:inherit;
+        font-size:13px;
+    }
+    .icon{
+        height:10px;
+        width:10px;
+        display:table-cell;
+        font-size: 15px;
+        padding-left:5px;
+        color: '[theme: themePrimary , default: #0078d7 ]';//#0078d7;
+    }
+    .arrowIcon{
+        height:10px;
+        width:10px;
+        display:table-cell;
+        font-size: 33px;
+        padding-left:5px;
+        vertical-align: bottom;
+        color: '[theme: themePrimary , default: #0078d7 ]';//#0078d7;
+    }
+    .iconDivNext{
+        display:table-cell;
+        vertical-align: middle;
+    }
+    .iconDiv{
+        display:table-cell;
+        vertical-align: bottom;
+    }
+    
+    .focusAreaCompletedColorBlock{
+        background-color:#22994e;
+        width:5px;
+        display:table-cell;
+    }
+    .focusAreaCurrentColorBlock{
+        background-color:#ffb900;
+        width:5px;
+        display:table-cell;}
+    .focusAreaNextColorBlock{
+        background-color:#0078d7;
+        width:5px;
+        display:table-cell;
+    }
+    .focusAreaTileContent{
+        display:table-cell;
+        padding:8px 0 8px 10px;
+        width:100%;
+    }
+    .datelabel{
+        font-weight:500;
+        display:inline-block;
+    }
+    .managerLabel{
+        font-weight:500;
+        display:inline;
+    }
+    .label{
+        font-weight:500;
+        margin-bottom: 10px;
+    }
+}

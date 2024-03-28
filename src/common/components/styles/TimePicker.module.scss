@@ -1,0 +1,25 @@
+@import 'common.module';
+
+.timePicker {
+    display: flex;
+    justify-content: space-between;
+
+    :global(.ms-Dropdown-container) {
+        flex: 1 40%;
+        margin-right: 2px;
+
+        :global(.ms-Dropdown) > i {
+            display: none;
+        }
+
+        :global(.ms-Dropdown) > :global(.ms-Dropdown-title) {
+            padding-right: 12px;
+        }
+    }
+
+    :global(.ms-Button) {
+        flex: 1 20%;
+        padding: 0 12px;
+        min-width: auto;          
+    }
+}

@@ -1,0 +1,22 @@
+@import 'common.module';
+
+.dateRotator {
+    display: inline-flex;
+    justify-content: space-between;
+    max-width: 300px;
+    width: 100%;
+
+    .previousDate, .nextDate {
+        flex: 0 auto;
+        color: $ms-color-themePrimary;
+        margin-top: 5px;
+    }
+
+    .dateString {
+        @include ms-fontSize-l;
+        flex: 1 auto;
+        line-height: 30px;
+        text-align: center;
+        white-space: nowrap;
+    }
+}

@@ -1,0 +1,16 @@
+@import 'common.module';
+
+.userPicker {
+    .label {
+        display: inline-block;
+    }
+
+    .tooltipIcon {
+        vertical-align: sub;
+        padding-left: 4px;
+    }
+
+    :global(.ms-PickerPersona-container) {
+        max-width: 260px;
+    }
+}

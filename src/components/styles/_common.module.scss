@@ -1,0 +1,11 @@
+@import '../../common/components/styles/common.module';
+
+@mixin configurationScreenBaseStyles($maxWidth: $ms-screen-max-md) {
+    padding-bottom: 40px;
+    margin: 0 auto;
+    max-width: $maxWidth;
+    
+    h2 {
+        color: $ms-color-themePrimary;
+    }
+}

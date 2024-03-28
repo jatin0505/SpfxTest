@@ -1,0 +1,54 @@
+@import 'common.module';
+
+.wizard {
+    .header {
+        background: '[theme: themeLight , default: #6264a7 ]';
+        color: '[theme: themePrimary , default: #6264a7 ]';
+
+        h1 {
+            margin: 0px;
+            font-weight: 300;
+        }
+    }
+
+    .headerNoStyle {
+        h1 {
+            font-weight: 300
+        }
+    }
+
+    .background {
+        background:$ms-color-themeLight;
+    }
+
+    .progressBar {
+        display: inline-flex;
+        color:  '[theme: themePrimary , default: #6264a7 ]';
+        padding: 15px 0 15px 0;
+        justify-content: space-evenly;
+
+        .statusIndicator {
+            @include ms-font-m-plus;
+            flex: 1 auto;
+            padding: 0 10px;
+            
+            &.futurePage {
+                color: #4A4A4A;
+            }
+        }
+    }
+
+    .footer {
+        margin: 25px auto;
+        
+        & > * {
+            margin: 0 10px;
+            min-width: 125px;
+        }
+    }
+
+    *:focus {
+        border-width:medium;
+        border-color: '[theme: themePrimary , default: black ]';
+    }
+}

@@ -1,0 +1,50 @@
+.focusAreaAssignmentEditor{
+    margin:0;
+    
+    .focusAreaAssignmentGrid label:not(.ms-Toggle-stateText){
+        font-weight:500;
+        margin-top:10px;
+    }
+    .focusAreaPanelHeader{
+        font-weight:400;
+        margin-bottom:10px;
+    }
+    .focusAreaProgramHeading{
+        color:#4254ac;
+        font-weight:700;
+    }
+    .focusAreaProgramHeadingDiv{
+        margin-top:20px;
+    }
+    .focusAreaProgramHeadingRow{
+        border-color:#d2d9fe;
+        margin:4px 0 0 -1px;
+    }
+    .focusAreaProgramHeadingRowDiv{
+        margin-top:7px;
+    }
+    .focusArea{
+        margin:0;
+    }
+    .focusAreaDates{
+        margin:0;
+    }
+    .focusAreaStore_Manager{
+        margin:0;
+    }
+    .onFocus:focus{
+        border:solid 2px black;
+    }
+    .onFocusDropdown:focus{
+        border:solid 1px black;
+    }
+    .label{
+        font-weight:500;
+        margin-top:15px;
+        margin-bottom: 10px;
+    }
+    .text
+    {
+        overflow:hidden
+    }
+}

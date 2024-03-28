@@ -1,0 +1,28 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "72f3a750-b9b1-4439-8a6e-5fb494a9b7ff",
+  "alias": "EmployeeRotationWebPartDEV",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportsFullBleed": true,
+  "preconfiguredEntries": [
+    {
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+      "group": {
+        "default": "Other"
+      },
+      "title": {
+        "default": "(DEV) Employee Rotation Program"
+      },
+      "description": {
+        "default": "Employee Rotation Program"
+      },
+      "officeFabricIconFontName": "TextDocument",
+      "properties": {
+        "showTitle": false
+      }
+    }
+  ]
+}

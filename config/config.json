@@ -1,0 +1,20 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+      "employee-rotation-web-parts": {
+          "components": [
+              {
+                  "entrypoint": "./lib/webparts/employeeRotation/EmployeeRotationWebPart.js",
+                  "manifest": "./src/webparts/employeeRotation/EmployeeRotationWebPart.manifest.json"
+              }
+          ]
+      }
+  },
+  "externals": {},
+  "localizedResources": {
+      "CommonStrings": "lib/common/components/loc/{locale}.js",
+      "ComponentStrings": "lib/components/loc/{locale}.js",
+      "EmployeeRotationWebPartStrings": "lib/webparts/employeeRotation/loc/{locale}.js"
+  }
+}

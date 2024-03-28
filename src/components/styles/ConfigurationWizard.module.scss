@@ -1,0 +1,9 @@
+@import 'common.module';
+
+.configWizard {
+    @include configurationScreenBaseStyles;
+
+    h1, h2, .pageLabel, .footer {
+        text-align: center;
+    }
+}

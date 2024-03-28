@@ -1,0 +1,95 @@
+@import '~office-ui-fabric-react/dist/sass/_References.scss';
+
+$grid-field-spacing: 6px;
+
+$spinner-size: 28px /*SpinnerSize.large*/ + 18px /*spinner label size*/;
+$spinner-padding: 20px;
+
+@mixin nostyles() {
+    font: unset;
+}
+
+@mixin verticallyCenterIcon($top: 4px) {
+    position: relative;
+    top: $top;
+}
+
+// dev helper to make workbench canvas use full page width
+@mixin dev-workbench-wide() {
+    :global(#workbenchPageContent) {
+        max-width: initial;
+
+        :global(.CanvasZone) {
+            max-width: initial;
+        }
+    }
+}
+
+// dev helper to make workbench canvas simulate full-bleed
+@mixin dev-workbench-fullBleed() {
+    :global(#workbenchPageContent) {
+        max-width: initial;
+        left: 0px;
+        right: 0px;
+
+        :global(.CanvasZone) {
+            max-width: initial;
+
+            &:global(.CanvasZone--read) {
+                padding: 0px;
+            }
+            
+            :global(.CanvasSection--read) {
+                padding-left: 0px;
+                padding-right: 0px;
+                
+                :global(.ControlZone) {
+                    padding: 0px;
+                    margin: 0px;
+                }
+            }
+        }
+
+        :global([class^="content_"]) {
+            padding: 0px;
+        }
+    }
+}
+
+:global(.ms-Grid).gridOfFields {
+    margin-top: $grid-field-spacing;
+    margin-bottom: $grid-field-spacing;
+
+    & > :global(.ms-Grid-row) > :global(.ms-Grid-col) {
+        margin-top: $grid-field-spacing;
+        margin-bottom: $grid-field-spacing;
+    }
+}
+
+// Source: https://codepen.io/sawmac/pen/qGudy
+@mixin transform($transforms) {
+    -moz-transform: $transforms;
+    -o-transform: $transforms;
+    -ms-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+@mixin scale($scale) {
+	 @include transform(scale($scale));
+} 
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
+}

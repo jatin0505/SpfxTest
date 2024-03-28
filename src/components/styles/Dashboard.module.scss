@@ -1,0 +1,16 @@
+@import 'common.module';
+
+.dashboard {
+    @include nostyles; 
+    
+    .headerTab{
+        margin:0px;
+    }
+
+    .actions{
+        float: right;
+        button{
+            z-index: 1;
+        }
+    }
+}
